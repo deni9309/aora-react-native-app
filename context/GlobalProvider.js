@@ -27,4 +27,14 @@ const GlobalProvider = ({ children }) => {
         setLoading(false)
       })
   }, [])
+
+  return (
+    <GlobalContext.Provider
+      value={{ isLogged, setIsLogged, user, setUser, loading }}
+    >
+      {children}
+    </GlobalContext.Provider>
+  )
 }
+
+export default GlobalProvider

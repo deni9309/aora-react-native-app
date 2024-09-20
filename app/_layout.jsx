@@ -4,7 +4,7 @@ import 'react-native-url-polyfill/auto'
 import { SplashScreen, Stack } from 'expo-router'
 import { Text, View, StyleSheet } from 'react-native'
 
-import 'react-native-reanimated'
+import GlobalProvider from '../context/GlobalProvider'
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync()
@@ -39,8 +39,10 @@ const RootLayout = () => {
   }
 
   return (
-    <View>
-      <Text>Root layout</Text>
-    </View>
+    <Stack>
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+    </Stack>
   )
 }
+
+export default RootLayout
