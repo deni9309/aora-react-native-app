@@ -1,0 +1,15 @@
+.expo
+.cache
+package.json
+package-lock.json
+/assets/*
+node_modules
+expo-env.d.ts
+nativewind-env.d.ts
+app.json
+babel.config.js
+yarn.lock
+.env
+.env.example
+/components/ui/*
+**/components/ui/*
