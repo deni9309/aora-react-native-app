@@ -2,7 +2,7 @@ import { Tabs, Redirect } from 'expo-router'
 import React from 'react'
 import { View, Text, Image } from 'react-native'
 
-import { icons } from '../../constants'
+import { icons, colors } from '../../constants'
 import { cn } from '../../lib/utils'
 
 const TabIcon = ({ icon, color, name, focused }) => {
@@ -17,6 +17,7 @@ const TabIcon = ({ icon, color, name, focused }) => {
       />
       <Text
         className={cn('text-xs', focused ? 'font-psemibold' : 'font-pregular')}
+        style={{ color: color }}
       >
         {name}
       </Text>
@@ -30,6 +31,14 @@ const TabsLayout = () => {
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
+          tabBarActiveTintColor: colors.secondaryDefault,
+          tabBarInactiveTintColor: colors.gray100,
+          tabBarStyle: {
+            backgroundColor: colors.primary,
+            borderTopWidth: 1,
+            borderTopColor: colors.black200,
+            height: 84,
+          },
         }}
       >
         <Tabs.Screen
