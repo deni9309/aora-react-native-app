@@ -7,4 +7,5 @@ export default {
   black100: '#1E1E2D',
   black200: '#232533',
   gray100: '#CDCDE0',
+  gray200: '#7B7B8B',
 }
