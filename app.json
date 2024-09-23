@@ -23,7 +23,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.jsm.aora"
+      "package": "com.your.aora"
     },
     "web": {
       "favicon": "./assets/favicon.png"

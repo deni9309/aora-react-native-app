@@ -56,7 +56,6 @@ const TabsLayout = () => {
             ),
           }}
         />
-
         <Tabs.Screen
           name="bookmark"
           options={{
@@ -88,7 +87,6 @@ const TabsLayout = () => {
             ),
           }}
         />
-
         <Tabs.Screen
           name="profile"
           options={{

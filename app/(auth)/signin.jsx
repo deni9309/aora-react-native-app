@@ -1,26 +1,34 @@
-import { View, Text, ScrollView, Image } from 'react-native'
+import { Link, router } from 'expo-router'
+import { View, Text, ScrollView, Alert, Dimensions, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import React, { useState } from 'react'
 
 import CustomButton from '../../components/custom-button'
 import FormField from '../../components/form-field'
 import { images } from '../../constants'
-import { Link } from 'expo-router'
 
-const SignUp = () => {
+const SignIn = () => {
   const [form, setForm] = useState({
-    username: '',
     email: '',
     password: '',
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const submit = () => {}
+  const submit = () => {
+      if (form.email === '' || form.password === '') {
+        Alert.alert('Error', 'Please fill in all fields')
+      }
+  }
 
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView>
-        <View className="justify-center w-full h-full px-4 my-6">
+        <View
+          className="justify-center w-full h-full px-4 my-6"
+          style={{
+            minHeight: Dimensions.get('window').height - 100,
+          }}
+        >
           <Image
             source={images.logo}
             alt="Aora Logo"
@@ -28,15 +36,8 @@ const SignUp = () => {
             className="w-[115px] h-[35px]"
           />
           <Text className="text-2xl font-psemibold text-white mt-10">
-            Create your Aora account
+            Sign in to Aora
           </Text>
-
-          <FormField
-            title="Username"
-            value={form.username}
-            handleChangeText={(e) => setForm({ ...form, username: e })}
-            otherStyles="mt-10"
-          />
 
           <FormField
             title="Email"
@@ -62,13 +63,13 @@ const SignUp = () => {
 
           <View className="flex flex-row justify-center gap-2 pt-5">
             <Text className="text-lg text-gray-100 font-pregular">
-              Already have an account?
+              Don't have an account?
             </Text>
             <Link
-              href="/sign-in"
+              href="/signup"
               className="text-lg font-psemibold text-secondary"
             >
-              Sign In
+              Sign Up
             </Link>
           </View>
         </View>
@@ -77,4 +78,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default SignIn

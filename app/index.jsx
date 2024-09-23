@@ -6,7 +6,10 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import CustomButton from '../components/custom-button'
 import { images, colors } from '../constants'
 
-export default function App() {
+// appwrite Package Name
+// com.your.aora
+
+const  Welcome=() =>{
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView contentContainerStyle={{ height: '100%' }}>
@@ -45,7 +48,7 @@ export default function App() {
 
           <CustomButton
             title="Continue with Email"
-            handlePress={() => router.push('/sign-in')}
+            handlePress={() => router.push('/signin')}
             containerStyles="w-full mt-7"
           />
         </View>
@@ -55,3 +58,5 @@ export default function App() {
     </SafeAreaView>
   )
 }
+
+export default Welcome
