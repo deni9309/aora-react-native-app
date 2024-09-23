@@ -1,50 +1,63 @@
-# Welcome to your Expo app 👋
+# Aora
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Introduction
 
-## Get started
+**AI Video Sharing App** - Developed with React Native to deliver smooth user experiences, enhanced by Animatable for engaging animations, and powered by robust Appwrite backend services, this app features an elegant design and top-tier functionality, allowing effortless sharing of AI-generated videos within the community.
 
-1. Install dependencies
+## Tech Stack
 
-   ```bash
-   npm install
-   ```
+- React Native
+- Expo
+- Nativewind
+- Animatable
+- Appwrite
 
-2. Start the app
+## Features
 
-   ```bash
-    npx expo start
-   ```
+1. **Welcoming Onboarding Screen:** Visually appealing graphics and straightforward instructions guide users as they enter the app.
 
-In the output, you'll find options to open the app in a
+2. **Secure Authentication & Authorization:** Protect user accounts with a reliable email-based login system.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+3. **Interactive Home Screen with Animated Lists:** A smoothly animated flat list provides an engaging display of the latest videos for effortless browsing.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+4. **Pull-to-Refresh Functionality:** Users can refresh video content with a simple pull gesture for real-time updates.
 
-## Get a fresh project
+5. **Advanced Full-Text Search:** Easily find videos with full-text search, offering real-time suggestions and quick results.
 
-When you're ready, run:
+6. **Seamless Tab Navigation:** Effortlessly switch between sections like Home, Search, and Profile using intuitive tab navigation.
 
-```bash
-npm run reset-project
-```
+7. **Media Upload Screen for New Posts:** Easily upload video and image posts with integrated media selection features.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+8. **Profile Screen with In-Depth Insights:** View and manage account details, uploaded videos, follower count, and more for a tailored experience.
 
-## Learn more
+9. **Device Responsiveness:** Consistent performance across all devices and screen sizes for a smooth and adaptive experience.
 
-To learn more about developing your project with Expo, look at the following resources:
+10. **Enhanced Animations:** Engaging animations powered by Animatable to boost user interaction and create a fluid, responsive UI.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Plus, a scalable code architecture designed for reusability and maintainability.
 
-## Join the community
+## Quick Start
 
-Join our community of developers creating universal apps.
+1.  Clone the project
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+2.  **Installation:** `npm install`
+
+3.  **Set up the environment variables**
+
+        APPWRITE_PUBLIC_ENDPOINT=  
+        APPWRITE_PROJECT_ID=  
+        APPWRITE_API_KEY=  
+        APPWRITE_DATABASE_ID=  
+        USER_COLLECTION_ID=  
+        VIDEO_COLLECTION_ID=  
+        STORAGE_ID=
+
+4.  **Run the Application:** `npm start`
+
+    **Expo Go**
+
+    Download the Expo Go app onto your device, then use it to scan the QR code from Terminal and run.
+
+## Credits and Attribution
+
+This application was inspired and made with the great mentoring of [JavaScript Mastery](https://www.youtube.com/@javascriptmastery). The tutorial I followed can be found [here](https://youtu.be/ZBCUegTZF7M?si=Oi8SOYS_gklHAOZU).
