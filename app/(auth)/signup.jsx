@@ -28,7 +28,7 @@ const SignUp = () => {
 
       // todo: set it to global state
 
-      router.navigate('/home')
+      router.replace('/home')
     } catch (error) {
       Alert.alert('Error!', error.message || 'Something went wrong!')
     } finally {
@@ -84,7 +84,7 @@ const SignUp = () => {
               Already have an account?
             </Text>
             <Link
-              href="/sign-in"
+              href="/signin"
               className="text-lg font-psemibold text-secondary"
             >
               Sign In

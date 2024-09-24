@@ -6,6 +6,7 @@ import React, { useState } from 'react'
 import CustomButton from '../../components/custom-button'
 import FormField from '../../components/form-field'
 import { images } from '../../constants'
+import { signIn } from '../../lib/appwrite'
 
 const SignIn = () => {
   const [form, setForm] = useState({
@@ -14,10 +15,23 @@ const SignIn = () => {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const submit = () => {
-      if (form.email === '' || form.password === '') {
-        Alert.alert('Error', 'Please fill in all fields')
-      }
+  const submit = async () => {
+    if (form.email === '' || form.password === '') {
+      Alert.alert('Error', 'Please fill in all fields')
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      await signIn(form.email, form.password)
+      // todo: set the user to global state
+
+      router.replace('/home')
+    } catch (error) {
+      Alert.alert('Error!', error.message || 'Something went wrong!')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (

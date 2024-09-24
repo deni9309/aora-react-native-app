@@ -5,11 +5,16 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 import CustomButton from '../components/custom-button'
 import { images, colors } from '../constants'
+import { useGlobalContext } from '../context/GlobalProvider'
 
 // appwrite Package Name
 // com.your.aora
 
-const  Welcome=() =>{
+const Welcome = () => {
+  const { isLoading, isLoggedIn } = useGlobalContext()
+
+  if (!isLoading && isLoggedIn) return <Redirect href="/home" />
+  
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView contentContainerStyle={{ height: '100%' }}>
