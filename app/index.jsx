@@ -18,7 +18,7 @@ const Welcome = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView contentContainerStyle={{ height: '100%' }}>
-        <View className="justify-center items-center h-full w-full px-4">
+        <View className="flex justify-center items-center h-full w-full px-4">
           <Image
             source={images.logo}
             alt="Aora Logo"
