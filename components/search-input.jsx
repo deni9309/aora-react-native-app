@@ -14,6 +14,8 @@ const SearchInput = ({ initialQuery, placeholder }) => {
         'Missing query',
         'Please, type something to search results across database.',
       )
+      
+      return
     }
 
     if (pathname.startsWith('/search')) {

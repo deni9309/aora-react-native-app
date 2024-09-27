@@ -3,6 +3,12 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 import { getCurrentUser } from '../lib/appwrite'
 
 const GlobalContext = createContext()
+
+/**
+ * Global context provider hook that exposes all the data
+ * for the currently logged in user
+ * @returns {{ isLoggedIn, setIsLoggedIn, user, setUser, isLoading }} `{ isLoggedIn, setIsLoggedIn, user, setUser, isLoading }`
+ */
 export const useGlobalContext = () => useContext(GlobalContext)
 
 const GlobalProvider = ({ children }) => {

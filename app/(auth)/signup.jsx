@@ -3,12 +3,14 @@ import React, { useState } from 'react'
 import { View, Text, ScrollView, Image, Alert } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-import CustomButton from '../../components/custom-button'
-import FormField from '../../components/form-field'
+import { CustomButton, FormField } from '../../components'
 import { images } from '../../constants'
 import { createUser } from '../../lib/appwrite'
+import { useGlobalContext } from '../../context/GlobalProvider'
 
 const SignUp = () => {
+  const { setUser, setIsLoggedIn } = useGlobalContext()
+
   const [form, setForm] = useState({
     username: '',
     email: '',
@@ -26,7 +28,15 @@ const SignUp = () => {
     try {
       const result = await createUser(form.email, form.password, form.username)
 
-      // todo: set it to global state
+      if (result) {
+        setUser(result)
+        setIsLoggedIn(true)
+      } else {
+        setUser(null)
+        setIsLoggedIn(false)
+        setIsSubmitting(false)
+        return
+      }
 
       router.replace('/home')
     } catch (error) {

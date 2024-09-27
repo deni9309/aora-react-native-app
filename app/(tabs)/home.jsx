@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import { View, Text, FlatList, Image, RefreshControl } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-import EmptyState from '../../components/empty-state'
-import SearchInput from '../../components/search-input'
-import Trending from '../../components/trending'
-import VideoCard from '../../components/video-card'
+import { EmptyState, SearchInput, Trending, VideoCard } from '../../components'
 import { images } from '../../constants'
+import { useGlobalContext } from '../../context/GlobalProvider'
 import useFetch from '../../hooks/useFetch'
 import { getAllVideos, getLatestVideos } from '../../lib/appwrite'
 
 const Home = () => {
+  const { user } = useGlobalContext()
+
   const { data: videos, refetch } = useFetch(getAllVideos)
   const [refreshing, setRefreshing] = useState(false)
 
@@ -37,7 +37,9 @@ const Home = () => {
                 <Text className="font-pmedium text-sm text-gray-100">
                   Welcome back,{' '}
                 </Text>
-                <Text className="text-2xl font-psemibold text-white">User</Text>
+                <Text className="text-2xl font-psemibold text-white">
+                  {user?.username || 'User'}
+                </Text>
               </View>
 
               <View className="mt-1.5">

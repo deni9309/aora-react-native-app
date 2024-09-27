@@ -1,8 +1,6 @@
 import { ResizeMode, Video } from 'expo-av'
 import React, { useState } from 'react'
 import {
-  View,
-  Text,
   FlatList,
   TouchableOpacity,
   ImageBackground,

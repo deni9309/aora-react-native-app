@@ -3,12 +3,13 @@ import { View, Text, ScrollView, Alert, Dimensions, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import React, { useState } from 'react'
 
-import CustomButton from '../../components/custom-button'
-import FormField from '../../components/form-field'
+import { CustomButton, FormField } from '../../components'
 import { images } from '../../constants'
-import { signIn } from '../../lib/appwrite'
+import { getCurrentUser, signIn } from '../../lib/appwrite'
+import { useGlobalContext } from '../../context/GlobalProvider'
 
 const SignIn = () => {
+  const { setUser, setIsLoggedIn } = useGlobalContext()
   const [form, setForm] = useState({
     email: '',
     password: '',
@@ -24,7 +25,17 @@ const SignIn = () => {
 
     try {
       await signIn(form.email, form.password)
-      // todo: set the user to global state
+
+      const sessionUser = await getCurrentUser()
+      if (sessionUser) {
+        setUser(sessionUser)
+        setIsLoggedIn(true)
+      } else {
+        setUser(null)
+        setIsLoggedIn(false)
+        setIsSubmitting(false)
+        return
+      }
 
       router.replace('/home')
     } catch (error) {

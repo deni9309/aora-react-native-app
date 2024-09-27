@@ -3,9 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { View, Text, FlatList, RefreshControl } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-import EmptyState from '../../components/empty-state'
-import SearchInput from '../../components/search-input'
-import VideoCard from '../../components/video-card'
+import { EmptyState, SearchInput, VideoCard } from '../../components'
 import useFetch from '../../hooks/useFetch'
 import { searchVideos } from '../../lib/appwrite'
 
@@ -20,7 +18,7 @@ const Search = () => {
     await refetch()
     setRefreshing(false)
   }
-  
+
   useEffect(() => {
     refresh()
   }, [query])
