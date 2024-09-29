@@ -18,7 +18,7 @@ const SignIn = () => {
 
   const submit = async () => {
     if (form.email === '' || form.password === '') {
-      Alert.alert('Error', 'Please fill in all fields')
+      Alert.alert('✗ Error', 'Please fill in all fields')
     }
 
     setIsSubmitting(true)
@@ -39,7 +39,7 @@ const SignIn = () => {
 
       router.replace('/home')
     } catch (error) {
-      Alert.alert('Error!', error.message || 'Something went wrong!')
+      Alert.alert('✗ Error!', error.message || 'Something went wrong!')
     } finally {
       setIsSubmitting(false)
     }
@@ -80,7 +80,7 @@ const SignIn = () => {
           />
 
           <CustomButton
-            title="Sign In"
+            title="🗝 Sign In"
             handlePress={submit}
             containerStyles="mt-7"
             isLoading={isSubmitting}

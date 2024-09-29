@@ -44,7 +44,7 @@ const Profile = () => {
                 source={icons.logout}
                 alt="logout"
                 resizeMode="contain"
-                className="w-6 h-6"
+                className="w-6 h-6 mr-1"
               />
             </TouchableOpacity>
 

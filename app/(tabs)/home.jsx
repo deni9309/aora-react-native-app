@@ -29,6 +29,7 @@ const Home = () => {
         scrollEnabled
         data={videos}
         keyExtractor={(item) => item.$id}
+        initialNumToRender={7}
         renderItem={({ item }) => <VideoCard video={item} />}
         ListHeaderComponent={() => (
           <View className="flex my-6 px-4 space-y-6">

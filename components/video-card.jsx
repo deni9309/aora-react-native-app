@@ -78,7 +78,6 @@ const VideoCard = ({
             className="w-full h-full rounded-xl mt-3"
             resizeMode="cover"
           />
-
           <Image
             source={icons.play}
             className="w-12 h-12 absolute"

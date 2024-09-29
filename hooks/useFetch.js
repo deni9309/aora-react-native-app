@@ -18,7 +18,7 @@ const useFetch = (fn) => {
 
       setData(response)
     } catch (error) {
-      Alert.alert('Error ', error.message)
+      Alert.alert('✗ Error ', error.message)
     } finally {
       setIsLoading(false)
     }
