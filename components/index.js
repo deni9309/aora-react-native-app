@@ -5,12 +5,14 @@ import InfoBox from './info-box.jsx'
 import SearchInput from './search-input'
 import Trending from './trending'
 import VideoCard from './video-card'
+import Loader from './loader.jsx'
 
 export {
   CustomButton,
   EmptyState,
   FormField,
   InfoBox,
+  Loader,
   SearchInput,
   Trending,
   VideoCard,

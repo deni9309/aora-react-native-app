@@ -1,7 +1,7 @@
 import { Redirect, Stack } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 
-//import { Loader } from '../../components'
+import { Loader } from '../../components'
 import { colors } from '../../constants'
 import { useGlobalContext } from '../../context/GlobalProvider'
 
@@ -17,7 +17,7 @@ const AuthLayout = () => {
         <Stack.Screen name="signup" options={{ headerShown: false }} />
       </Stack>
 
-      {/* <Loader isLoading={loading} /> */}
+      <Loader isLoading={loading} />
       <StatusBar backgroundColor={colors.primary} style="light" />
     </>
   )

@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar'
 import { View, ScrollView, Image, Text } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-import { CustomButton } from '../components'
+import { CustomButton, Loader } from '../components'
 import { images, colors } from '../constants'
 import { useGlobalContext } from '../context/GlobalProvider'
 
@@ -17,6 +17,8 @@ const Welcome = () => {
 
   return (
     <SafeAreaView className="bg-primary h-full">
+      <Loader isLoading={isLoading} />
+
       <ScrollView contentContainerStyle={{ height: '100%' }}>
         <View className="flex justify-center items-center h-full w-full px-4">
           <Image
